@@ -1,0 +1,35 @@
+<div class="default-primary-color">
+  <h2 class="dark-primary-color primary-text-color p-3 text-center">
+    Паралельні методи сортування даних. Бульбашкове сортування, сортування Шелла
+  </h2>
+  <div class="m-4 p-3 text-center">
+    <h4>Початковий масив : {{unsortedArr}}</h4>
+  </div>
+  <div class="text-center">
+    <button class="btn accent-color text-primary-color m-4 p-2 col-2" (click)="bubbleSort()" *ngIf="formB">Посортувати методом бульбашки</button>
+    <button class="btn accent-color text-primary-color  m-4 p-2 col-2" (click)="shellSort()" *ngIf="formS">Посортувати методом Шелла</button>
+  </div>
+
+  <form *ngIf="!formB" class="row">
+    <div class="light-primary-color col-6 offset-3 container">
+      <h4 class="divider-color text-center">Сортування методом бульбашки</h4>
+      <p>Результат : <br>{{bubbleS.arr}}</p>
+      <p>Оцінка ефективності : </p>
+      <p class="offset-1">4 потоки: {{bubbleS.effectivityAnalisys}} <br>   8 потоків: {{bubbleS.effectivityAnalisys2}}</p>
+    </div>
+  </form>
+  <br>
+  <form *ngIf="!formS" class="row">
+    <div class="light-primary-color offset-3 col-6 container">
+      <h4 class="divider-color text-center">Сортування методом Шелла</h4>
+      <p>Результат : <br>{{shellS.arr}}</p>
+      <p>Оцінка ефективності : </p>
+      <p class="offset-1">4 потоки: {{shellS.effectivityAnalisys}} <br>   8 потоків: {{shellS.effectivityAnalisys2}}</p>
+    </div>
+  </form>
+
+  <div class="text-center p-3">
+    <button class="btn accent-color text-primary-color m-4 p-2" (click)="hideResults()">Приховати результат</button>
+  </div>
+
+</div>
